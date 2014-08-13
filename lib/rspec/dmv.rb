@@ -1,4 +1,5 @@
 require "rspec/dmv/version"
+require "rspec/dmv/presence_validator"
 require "rspec/dmv/validation_generator"
 require 'rspec/core'
 require 'shoulda/matchers'
