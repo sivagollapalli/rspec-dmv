@@ -1,25 +1,11 @@
 require "rspec/dmv/version"
+require "rspec/dmv/validation_generator"
 require 'rspec/core'
 require 'shoulda/matchers'
 
 module RSpec
   module Dmv 
-    def validate(model, validation, attributes)
-      case validation.to_s
-      when "presence"
-        generate_presence_validations(model, attributes)
-      end 
-    end 
-
-    def generate_presence_validations(model, attributes)
-      attributes.each do |attribute|
-        describe model do
-          it do
-            should validate_presence_of(attribute.to_sym)
-          end 
-        end 
-      end 
-    end 
+    include RSpec::Dmv::ValidationGenerator
   end 
 end
 
