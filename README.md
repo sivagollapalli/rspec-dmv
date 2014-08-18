@@ -1,6 +1,6 @@
 # Rspec::Dmv
 
-TODO: Write a gem description
+Dynamically generate test cases for rails validations
 
 ## Installation
 

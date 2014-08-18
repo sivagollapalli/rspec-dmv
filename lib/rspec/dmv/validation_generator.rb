@@ -1,18 +1,21 @@
 module RSpec
   module Dmv
     module ValidationGenerator
-      include RSpec::Dmv::PresenceValidator
 
-      def expect_validation_in(model, options)
-        generate_validations(model, options) 
+      def expect_presence_validation_for(options)
+        options.merge!(type: :presence)
+
+        GenerateValidation.new(self).generate options
       end
 
-      def generate_validations(model, options)
-        case options[:type]
-        when :presence
-          options[:attributes].each do |attribute|
-            generate_presence_validation_test_cases(options, attribute)
-          end 
+      class GenerateValidation < Struct.new(:rspec)
+        include RSpec::Dmv::PresenceValidator
+
+        def generate(options)
+          case options[:type]
+          when :presence
+            generate_presence_validation_test_cases(options)
+          end
         end
       end
     end
