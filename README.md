@@ -1,3 +1,5 @@
+{<img src="https://codeclimate.com/github/sivagollapalli/rspec-dmv/badges/gpa.svg" />}[https://codeclimate.com/github/sivagollapalli/rspec-dmv]
+
 # Rspec::Dmv
 
 Dynamically generate test cases for rails validations
