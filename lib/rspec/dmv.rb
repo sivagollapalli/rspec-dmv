@@ -1,6 +1,7 @@
 require "rspec/dmv/extend_ruby"
 require "rspec/dmv/version"
 require "rspec/dmv/presence_validator"
+require "rspec/dmv/numeric_validator"
 require "rspec/dmv/unique_validator"
 require "rspec/dmv/length_validator"
 require "rspec/dmv/validation_generator"
